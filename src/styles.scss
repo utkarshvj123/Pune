@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-dropdowns/styles/material.css';
+@import "scss/custom";
+
+
+// global custom style
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color:$dark;
+}
+ 
+.btn {
+    padding: 0.5rem 1rem;
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+// breadcrumbs
+.breadcrumb{
+    background-color:$light;
+    li a{
+        color: $dark;
+        &:hover{
+            color:lighten($color:$dark, $amount: 20);
+            text-decoration: none;
+        }
+    }
+}
+// card
+#page-content-wrapper{
+    padding: 30px 15px;
+    .card{
+        border-color: $light;
+        border-radius: 0;
+        .card-header {
+            background-color:$primary;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 0;
+            font-size: 16px;
+        }
+    } 
+}
+
+// modal
+.modal{
+    .modal-header, .modal-footer{
+        border: none;
+    }
+    button.close {
+        background-color:$primary;
+        color: #fff;
+        text-shadow: none;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        border-radius: 50%;
+        margin: 0rem 0rem -1rem auto;
+        opacity: 1;
+        &:focus{
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+.modal, .card{
+    .btn{
+        text-transform: uppercase;
+        &-primary{
+            background-color: $btn-primary;
+            color: #fff;
+            border: $btn-primary; 
+            font-size: 14px;
+            border-radius: 0; 
+        }
+    }
+   
+}
+
+// table
+.table{
+   color: $dark;
+   margin-top:1rem; 
+   td, th{
+       padding: 0.60rem;
+       vertical-align: top !important; 
+   }
+    thead th {
+        border-bottom: 0;
+    }
+}
+
+// pagination
+ul.pagination {
+    border-radius: 0;
+    li a {
+        border: none;
+        border-radius: 0 !important;
+        color: $dark;
+        &[aria-label="Next"]{
+            background-color: $primary;
+            color: #fff;
+        }
+        &[aria-label="Previous"]{
+            background-color: $light;   
+        }
+    }
+} 
+
+//  fixed sidebar
+// body{
+//     padding-top: 66px;
+//     padding-left: 70px;
+//     transition: all 0.3s ease-in-out 0s;
+//     app-header .navbar {
+//         position: fixed;
+//         width: 100%;
+//         left: 0;
+//         top: 0;
+//         z-index: 9;
+//     }
+//     #sidebar-wrapper {
+//         position: fixed;
+//         left: 0;
+//         top: 0;
+//         transition: all 0.3s ease-in-out 0s;
+//         padding-top: 66px !important;
+//         overflow-x: auto;
+//     }
+    
+//     &.sidebar-open{
+//         transition: all 0.3s ease-in-out 0s;
+//          padding-left: 290px;
+//         #sidebar-wrapper {
+//             position: fixed;
+//             left: 0;
+//             top: 0;
+//             transition: all 0.3s ease-in-out 0s;
+//             padding-top: 66px !important;
+//             overflow-x: auto;
+//         }
+        
+//     }
+// }

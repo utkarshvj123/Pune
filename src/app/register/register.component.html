@@ -1,0 +1,100 @@
+<div class="form-style-5" style="    margin-bottom: 54px;
+    margin-top: 60px;">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <!--            <legend><span class="number">1</span> Sign up</legend>-->
+      <div style="color: red;text-align: center;margin-bottom: 30px">
+        <h1>Register</h1></div>
+      <div class="form-group">
+        <input type="text" name="field2" placeholder="Your Email" formControlName="email"
+               [ngClass]="{ 'is-invalid': submitted && myForm.controls.email.errors }" style="    margin-bottom: 16px;">
+        <div
+          *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="myForm.controls['email'].errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="myForm.controls['email'].errors.pattern">Email must be a valid email address</div>
+        </div>
+      </div>
+      <input type="text" name="field2" placeholder="Name" formControlName="name">
+      <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)"
+           class="alert alert-danger" style="    margin-bottom: 16px;">
+        <div *ngIf="myForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <input type="date" name="field1" placeholder="Date" formControlName="date" style="height: 41px;">
+      <div *ngIf="myForm.controls['date'].invalid && (myForm.controls['date'].dirty || myForm.controls['date'].touched)"
+           class="alert alert-danger" style="    margin-bottom: 16px;">
+        <div *ngIf="myForm.controls['date'].errors.required">
+          Date is required.
+        </div>
+      </div>
+
+      <select type="select" formControlName="countryname" (ngModelChange)="gettingCountryNameArray($event)">
+        <option *ngFor="let country of country" value={{country.callingCodes}}>
+          {{country.name}}
+        </option>
+      </select>
+
+      <div class="row">
+        <div class="col-3" style="    padding-right: 0px;">
+          <select formControlName="countryCode" style="    margin-bottom: 0px;    height: 42px;">
+            <option>
+              {{countryCode}}
+
+            </option>
+          </select>
+
+        </div>
+
+        <div class="col-9" style="    padding-left: 0px;">
+
+
+          <input type="number" name="field2" placeholder="Phone" formControlName="phone" [maxLength]="10">
+        </div>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['phone'].invalid && (myForm.controls['phone'].dirty || myForm.controls['phone'].touched)"
+        class="alert alert-danger" style="    margin-bottom: 16px;">
+        <div *ngIf="myForm.controls['phone'].errors.required">
+          Phone is required.
+        </div>
+      </div>
+      <input type="password" name="field1" placeholder="Password" formControlName="password">
+      <div
+        *ngIf="myForm.controls['password'].invalid && (myForm.controls['password'].dirty || myForm.controls['password'].touched)"
+        class="alert alert-danger" style="    margin-bottom: 16px;">
+        <div *ngIf="myForm.controls['password'].errors.required">
+          Password is required.
+        </div>
+      </div>
+
+      <input type="password" name="field1" placeholder="Confirm password" formControlName="confirm_password"
+             style="margin-bottom: 10px;">
+
+      <div style="text-align: left;color: red;font-size: 15px" class="alert alert-danger" *ngIf="notMatched">
+        <p>Password doesn't match.</p>
+
+      </div>
+      <div
+        *ngIf="myForm.controls['confirm_password'].invalid && (myForm.controls['confirm_password'].dirty || myForm.controls['confirm_password'].touched)"
+        class="alert alert-danger" style="    margin-bottom: 16px;">
+        <div *ngIf="myForm.controls['confirm_password'].errors.required">
+          Confirm Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <a href="#" class="ForgetPwd" style="color: black" value="Login"
+           [routerLink]="['/login']"><strong>Login?</strong></a>
+      </div>
+
+      <div style="text-align: center">
+        <button class="btn btn-success" [disabled]="!myForm.valid" type="submit" value="Apply">Submit</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+

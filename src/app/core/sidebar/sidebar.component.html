@@ -1,0 +1,27 @@
+<div class="bg-dark border-right" id="sidebar-wrapper">
+  <div class="list-group list-group-flush">
+    <ul class="sidebar-nav">
+      <li class="sidebar-header">User</li>
+      <li routerLink="/users/home" routerLinkActive="active-link" class="sidebar-item">
+        <a class="list-group-item-action list-text"><span class="icon"><img src="assets/svgs/fresh-food.svg" width="20"
+                                                                            height="20"/></span><span
+          class="list-text-inner">
+        Home</span></a></li>
+
+      <li routerLink="/users/about-us" routerLinkActive="active-link" class="sidebar-item">
+        <a class="list-group-item-action"> <span class="icon"><img src="assets/svgs/threshol.svg" width="20"
+                                                                   height="20"/></span> <span class="list-text-inner">
+        About Us</span></a></li>
+      <li routerLink="/users/help" routerLinkActive="active-link" class="sidebar-item"><a
+        class="list-group-item-action"><span class="icon"><img src="assets/svgs/external-vocher.svg" width="20"
+                                                               height="20"/></span>
+        <span class="list-text-inner">Help</span></a></li>
+
+      <li (click)="logout()" routerLinkActive="active-link" class="sidebar-item"><a
+        class="list-group-item-action"><span class="icon"><img src="assets/svgs/search-voucher.svg" width="20"
+                                                               height="20"/></span>
+        <span class="list-text-inner">Logout</span></a></li>
+    </ul>
+
+  </div>
+</div>

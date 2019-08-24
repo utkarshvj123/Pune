@@ -1,0 +1,63 @@
+<div class="login">
+  <!-- <img class="form-1-img" src={logo}  alt="logo" /> -->
+  <div class="row content justify-content-center">
+
+
+    <div class="col-sm-6 login-form">
+      <h1>Login</h1>
+      <!-- <form > -->
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <label>User Name</label>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><img height="20" width="20" src="assets/svgs/user.svg"/></span>
+          </div>
+          <input type="text" class="form-control" formControlName="email" placeholder="Your Email ID"/>
+        </div>
+
+        <!-- <div *ngIf="email.hasError('required') && email.touched">
+          Name is required...
+        </div>
+        <div *ngIf="email.hasError('pattern') && email.touched">
+         Entervalid Email Id...
+        </div> -->
+
+
+        <label>Password</label>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><img height="20" width="20" src="assets/svgs/locked.svg"/></span>
+          </div>
+          <input type="password" name="password" class="form-control" formControlName="password"
+                 placeholder="Your Password "/>
+        </div>
+        <div *ngIf="messageDisplay" style="color: red;text-align: left;font-size: 12px">
+          <p>Email or password not valid.</p>
+        </div>
+        <!-- <div *ngIf="password.hasError('required') && password.touched">
+          Password is required...
+        </div> -->
+
+        <div class="form-group">
+          <button type="submit" [disabled]="!myForm.valid" class="btn-block btnSubmit" (click)="loginfunction()">login
+          </button>
+
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <a (click)="clickedFunction()" class="ForgetPwd" value="Login">Forget Password?</a>
+          </div>
+        </div>
+        <div class="col-6" style="text-align: right">
+          <div class="form-group">
+            <a href="#" class="ForgetPwd" value="Login" [routerLink]="['/register']">Register User</a>
+          </div>
+        </div>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+</div>
